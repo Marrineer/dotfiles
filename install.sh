@@ -14,5 +14,12 @@ echo "[*] Installing Java 21.0.4-tem..."
 sdk install java 21.0.4-tem || true
 sdk default java 21.0.4-tem
 
+echo "[*] Install necessary package"
+sudo apt install tree maven gradle curl unzip 
+
 echo "[✓] Java version:"
 java -version
+
+echo "[*] Ensure SDKMAN is loaded"
+echo 'export SDKMAN_DIR="$HOME/.sdkman"' >> ~/.bashrc
+echo '[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"' >> ~/.bashrc
